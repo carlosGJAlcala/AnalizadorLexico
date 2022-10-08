@@ -5,6 +5,7 @@
 package vista;
 
 import control.*;
+import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
@@ -339,7 +340,8 @@ public class Vista extends javax.swing.JFrame
                 {
                     resultadoboolean = mdepolinomio.evaluarExpresion(cadena);
                 }
-                String r = (resultadoboolean) ? "es valida" : "no es valida";
+                String r = (resultadoboolean) ? "Es valida" : "No es valida";
+                resultado.setForeground(Color.BLACK);
                 resultado.setText(r);
             } catch (Exception ex)
             {
@@ -355,23 +357,21 @@ public class Vista extends javax.swing.JFrame
     {//GEN-HEADEREND:event_generarMouseClicked
         try
         {
-            Date date = new Date();
-            SimpleDateFormat sd = new SimpleDateFormat("DD_hh_mm_ss");
+            
             Set<String> set = new HashSet<String>();
             if (tm == TipoMaquina.MAPA)
             {
-                set = mdemapa.generarCadena2(0, 0, set, "");
-                mdemapa.guardarFicheroCadena(set, "");
+                set = mdemapa.generarCadena(0, 0, set, "");
+                mdemapa.guardarFicheroCadena(set);
             } else if (tm == TipoMaquina.POLINOMIO)
             {
-                set = mdepolinomio.generarCadena2(0, 0, set, "");
-                mdepolinomio.guardarFicheroCadena(set, "");
+                set = mdepolinomio.generarCadena(0, 0, set, "");
+                mdepolinomio.guardarFicheroCadena(set);
             } else
             {
-                resultado.setText("selecionana una una expresion");
+                resultado.setForeground(Color.BLACK);
+                resultado.setText("Selecciona una expresión");
             }
-
-          
 
         } catch (Exception ex)
         {

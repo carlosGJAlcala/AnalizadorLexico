@@ -17,19 +17,6 @@ public class Pecl1Compiladores
 
     public static void main(String[] args)
     {
-        boolean pro = true;
-        if (pro)
-        {
-            pro();
-        } else
-        {
-           // debug();
-        }
-
-    }
-
-    public static void pro()
-    {
         java.awt.EventQueue.invokeLater(new Runnable()
         {
             public void run()
@@ -40,19 +27,4 @@ public class Pecl1Compiladores
 
     }
 
- /*   public static void debug()
-    {
-        MaquinaDeEstados mde = new MaquinaDeEstados();
-        try
-        {
-
-           
-            boolean resultado = mde.evaluarExpresion("XNDYDDDD");
-            System.out.println("La expresion es : " + resultado);
-            //mde.generarCadena();
-        } catch (Exception ex)
-        {
-            System.out.println(ex);
-        }
-    }*/
 }
